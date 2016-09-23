@@ -1,5 +1,21 @@
 #!/bin/bash
 echo "docker registory cleaner"
+
+if [ "x$REGISTORY" == "x" ] ; then
+  echo "target registory undefined."
+  exit 1
+fi
+
+if [ "x$REPOSITORY" == "x" ] ; then
+  echo "target repository undefined."
+  exit 2
+fi
+
+if [ "x$GENERATION_NUM" == "x" ] ; then
+  echo "keep generations undefined."
+  exit 3
+fi
+
 echo "target registory = ${REGISTORY}"
 echo "target repository = ${REPOSITORY}"
 echo "keep generations = ${GENERATION_NUM}"
